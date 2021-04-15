@@ -65,7 +65,7 @@ class __TwigTemplate_587c8fecd95e8e15a26eb225686f2096cc04915d7e4478c10fc6da7214e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Pack index";
+        echo "Packs";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,75 +85,118 @@ class __TwigTemplate_587c8fecd95e8e15a26eb225686f2096cc04915d7e4478c10fc6da7214e
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Pack index</h1>
+        echo "    <h1>Packs</h1>
+    <!-- DATA TABLE -->
+    <div class=\"table-data__tool\">
+        <div class=\"table-data__tool-left\">
+            <div class=\"rs-select2--light rs-select2--md\">
+                <select class=\"js-select2\" name=\"property\">
+                    <option selected=\"selected\">All Properties</option>
+                    <option value=\"\">Option 1</option>
+                    <option value=\"\">Option 2</option>
+                </select>
+                <div class=\"dropDownSelect2\"></div>
+            </div>
+            <div class=\"rs-select2--light rs-select2--sm\">
+                <select class=\"js-select2\" name=\"time\">
+                    <option selected=\"selected\">Today</option>
+                    <option value=\"\">3 Days</option>
+                    <option value=\"\">1 Week</option>
+                </select>
+                <div class=\"dropDownSelect2\"></div>
+            </div>        </div>
+        <div class=\"table-data__tool-right\">
+            <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
+                <a href=\"";
+        // line 28
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_new");
+        echo "\"> <i class=\"zmdi zmdi-plus\"></i>add item</a></button>
+        </div>
 
-    <table class=\"table\">
-        <thead>
+    </div>
+    <div class=\"table-responsive table-responsive-data2\">
+        <table class=\"table table-data2\">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>actions</th>
+                <th>
+                    <label class=\"au-checkbox\">
+                        <input type=\"checkbox\">
+                        <span class=\"au-checkmark\"></span>
+                    </label>
+                </th>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+                <th>price</th>
+                <th></th>
             </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 19
+            </thead>
+            <tbody>
+            ";
+        // line 50
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 19, $this->source); })()));
-        $context['_iterated'] = false;
+        $context['_seq'] = twig_ensure_traversable((isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 50, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["pack"]) {
-            // line 20
-            echo "            <tr>
+            // line 51
+            echo "            <tr class=\"tr-shadow\">
+                <td>
+                    <label class=\"au-checkbox\">
+                        <input type=\"checkbox\">
+                        <span class=\"au-checkmark\"></span>
+                    </label>
+                </td>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "nom", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "prix", [], "any", false, false, false, 23), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "description", [], "any", false, false, false, 24), "html", null, true);
+            // line 58
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 58), "html", null, true);
             echo "</td>
                 <td>
-                    <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\">show</a>
-                    <a href=\"";
-            // line 27
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            echo "\">edit</a>
+                    <span class=\"block-email\">";
+            // line 60
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "nom", [], "any", false, false, false, 60), "html", null, true);
+            echo "</span>
+                </td>
+                <td class=\"desc\">";
+            // line 62
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "description", [], "any", false, false, false, 62), "html", null, true);
+            echo "</td>
+                <td>";
+            // line 63
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "prix", [], "any", false, false, false, 63), "html", null, true);
+            echo "</td>
+                <td>
+                    <div class=\"table-data-feature\">
+                        <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Show\">
+                            <a href=\"";
+            // line 67
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 67)]), "html", null, true);
+            echo "\"><i class=\"zmdi zmdi-mail-send\"></i></a>
+                        </button>
+                        <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Edit\">
+                            <a href=\"";
+            // line 70
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 70)]), "html", null, true);
+            echo "\"><i class=\"zmdi zmdi-edit\"></i></a>
+                        </button>
+                        <!--button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete\">
+                            <i class=\"zmdi zmdi-delete\"></i>
+                        </button-->
+
+                    </div>
                 </td>
             </tr>
-        ";
-            $context['_iterated'] = true;
-        }
-        if (!$context['_iterated']) {
-            // line 31
-            echo "            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        ";
+            <tr class=\"spacer\"></tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pack'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </tbody>
-    </table>
+        // line 81
+        echo "            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
 
-    <a href=\"";
-        // line 38
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_new");
-        echo "\">Create new</a>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -175,50 +218,98 @@ class __TwigTemplate_587c8fecd95e8e15a26eb225686f2096cc04915d7e4478c10fc6da7214e
 
     public function getDebugInfo()
     {
-        return array (  155 => 38,  150 => 35,  141 => 31,  132 => 27,  128 => 26,  123 => 24,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  194 => 81,  177 => 70,  171 => 67,  164 => 63,  160 => 62,  155 => 60,  150 => 58,  141 => 51,  137 => 50,  112 => 28,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Pack index{% endblock %}
+{% block title %}Packs{% endblock %}
 
 {% block body %}
-    <h1>Pack index</h1>
+    <h1>Packs</h1>
+    <!-- DATA TABLE -->
+    <div class=\"table-data__tool\">
+        <div class=\"table-data__tool-left\">
+            <div class=\"rs-select2--light rs-select2--md\">
+                <select class=\"js-select2\" name=\"property\">
+                    <option selected=\"selected\">All Properties</option>
+                    <option value=\"\">Option 1</option>
+                    <option value=\"\">Option 2</option>
+                </select>
+                <div class=\"dropDownSelect2\"></div>
+            </div>
+            <div class=\"rs-select2--light rs-select2--sm\">
+                <select class=\"js-select2\" name=\"time\">
+                    <option selected=\"selected\">Today</option>
+                    <option value=\"\">3 Days</option>
+                    <option value=\"\">1 Week</option>
+                </select>
+                <div class=\"dropDownSelect2\"></div>
+            </div>        </div>
+        <div class=\"table-data__tool-right\">
+            <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
+                <a href=\"{{ path('pack_new') }}\"> <i class=\"zmdi zmdi-plus\"></i>add item</a></button>
+        </div>
 
-    <table class=\"table\">
-        <thead>
+    </div>
+    <div class=\"table-responsive table-responsive-data2\">
+        <table class=\"table table-data2\">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>actions</th>
+                <th>
+                    <label class=\"au-checkbox\">
+                        <input type=\"checkbox\">
+                        <span class=\"au-checkmark\"></span>
+                    </label>
+                </th>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+                <th>price</th>
+                <th></th>
             </tr>
-        </thead>
-        <tbody>
-        {% for pack in packs %}
-            <tr>
-                <td>{{ pack.id }}</td>
-                <td>{{ pack.nom }}</td>
-                <td>{{ pack.prix }}</td>
-                <td>{{ pack.description }}</td>
+            </thead>
+            <tbody>
+            {% for pack in packs %}
+            <tr class=\"tr-shadow\">
                 <td>
-                    <a href=\"{{ path('pack_show', {'id': pack.id}) }}\">show</a>
-                    <a href=\"{{ path('pack_edit', {'id': pack.id}) }}\">edit</a>
+                    <label class=\"au-checkbox\">
+                        <input type=\"checkbox\">
+                        <span class=\"au-checkmark\"></span>
+                    </label>
+                </td>
+                <td>{{ pack.id }}</td>
+                <td>
+                    <span class=\"block-email\">{{ pack.nom }}</span>
+                </td>
+                <td class=\"desc\">{{ pack.description }}</td>
+                <td>{{ pack.prix }}</td>
+                <td>
+                    <div class=\"table-data-feature\">
+                        <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Show\">
+                            <a href=\"{{ path('pack_show', {'id': pack.id}) }}\"><i class=\"zmdi zmdi-mail-send\"></i></a>
+                        </button>
+                        <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Edit\">
+                            <a href=\"{{ path('pack_edit', {'id': pack.id}) }}\"><i class=\"zmdi zmdi-edit\"></i></a>
+                        </button>
+                        <!--button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete\">
+                            <i class=\"zmdi zmdi-delete\"></i>
+                        </button-->
+
+                    </div>
                 </td>
             </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"5\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            <tr class=\"spacer\"></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- END DATA TABLE -->
 
-    <a href=\"{{ path('pack_new') }}\">Create new</a>
+
 {% endblock %}
-", "pack/index.html.twig", "/opt/lampp/htdocs/pidev/pidev/templates/pack/index.html.twig");
+", "pack/index.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/index.html.twig");
     }
 }

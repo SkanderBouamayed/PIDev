@@ -94,4 +94,18 @@ class PackController extends AbstractController
 
         return $this->redirectToRoute('pack_index');
     }
+
+    /**
+     * @Route("/user/", name="pack_index_front_office", methods={"GET"})
+     */
+    public function showAll(): Response
+    {
+        $packs = $this->getDoctrine()
+            ->getRepository(Pack::class)
+            ->findAll();
+
+        return $this->render('pack/frontOffice/index.html.twig', [
+            'packs' => $packs,
+        ]);
+    }
 }
