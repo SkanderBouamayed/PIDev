@@ -843,6 +843,6 @@ class __TwigTemplate_1aa2bb9086457ff867df32b9065eaa98688b9a8a7874b836dfacf480a97
     </table>
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/messenger.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
+", "@WebProfiler/Collector/messenger.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/web-profiler-bundle/Resources/views/Collector/messenger.html.twig");
     }
 }

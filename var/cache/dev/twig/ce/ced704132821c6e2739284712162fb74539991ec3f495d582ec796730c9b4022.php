@@ -275,6 +275,6 @@ class __TwigTemplate_03a8ddc585799b9637bd9fb3bc44cc7159123936eadfe8ab9b012b7d4e3
     </body>
 </html>
 {% block after_html %}{% endblock %}
-", "@Twig/layout.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }

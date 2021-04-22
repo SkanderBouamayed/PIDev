@@ -13,7 +13,11 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/pack' => [[['_route' => 'pack_index', '_controller' => 'App\\Controller\\PackController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/pack/index' => [[['_route' => 'pack_index', '_controller' => 'App\\Controller\\PackController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/pack/pdf' => [[['_route' => 'pack_pdf', '_controller' => 'App\\Controller\\PackController::pdf'], null, ['GET' => 0], null, false, false, null]],
+        '/pack/front' => [[['_route' => 'pack_index_front', '_controller' => 'App\\Controller\\PackController::frontIndex'], null, ['GET' => 0], null, false, false, null]],
+        '/pack/indexPrix' => [[['_route' => 'pack_index_prix', '_controller' => 'App\\Controller\\PackController::orderedPriceShow'], null, ['GET' => 0], null, false, false, null]],
+        '/pack/indexName' => [[['_route' => 'pack_index_name', '_controller' => 'App\\Controller\\PackController::orderedNameShow'], null, ['GET' => 0], null, false, false, null]],
         '/pack/new' => [[['_route' => 'pack_new', '_controller' => 'App\\Controller\\PackController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList

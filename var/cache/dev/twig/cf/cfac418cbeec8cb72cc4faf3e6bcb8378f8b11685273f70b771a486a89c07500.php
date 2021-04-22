@@ -486,6 +486,6 @@ header .container { display: flex; justify-content: space-between; }
     .hidden-xs-down { display: initial; }
     .help-link { margin-left: 30px; }
 }
-", "@Twig/exception.css.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/twig-bundle/Resources/views/exception.css.twig");
+", "@Twig/exception.css.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/twig-bundle/Resources/views/exception.css.twig");
     }
 }

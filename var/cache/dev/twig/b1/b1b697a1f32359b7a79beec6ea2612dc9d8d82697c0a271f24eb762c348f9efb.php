@@ -204,6 +204,6 @@ class __TwigTemplate_3a5f7f64b527c4a36253f0fb374e9d6683e04925d6ee3a2670f8b7be069
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }

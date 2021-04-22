@@ -63,6 +63,6 @@ class __TwigTemplate_3cf9f6c550f29869848722ef75071cf0ce16efa43894810c56d3b4a2724
     public function getSourceContext()
     {
         return new Source("<?php echo \$view['form']->block(\$form, 'widget_container_attributes') ?>
-", "@Framework/Form/container_attributes.html.php", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/framework-bundle/Resources/views/Form/container_attributes.html.php");
+", "@Framework/Form/container_attributes.html.php", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/framework-bundle/Resources/views/Form/container_attributes.html.php");
     }
 }

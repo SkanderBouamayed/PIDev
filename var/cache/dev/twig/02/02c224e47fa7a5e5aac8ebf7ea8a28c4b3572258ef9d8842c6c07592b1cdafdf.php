@@ -146,6 +146,6 @@ class __TwigTemplate_dc36b58ba4deb820e3653f030af422e566a7d60b26c98e25f02ba36fc16
         </div>
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
+", "@WebProfiler/Profiler/toolbar_redirect.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar_redirect.html.twig");
     }
 }

@@ -1,0 +1,41 @@
+<html>
+<head>
+    <style>
+        table {
+            border: 2px solid black;
+            border-spacing: 20px;
+
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Packs</h1>
+        <table class="table table-data2">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>description</th>
+                <th>price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for pack in packs %}
+            <tr class="tr-shadow">
+
+                <td>{{ pack.id }}</td>
+                <td>
+                    <span class="block-email">{{ pack.nom }}</span>
+                </td>
+                <td class="desc">{{ pack.description }}</td>
+                <td>{{ pack.prix }}</td>
+
+            </tr>
+            <tr class="spacer"></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</div>
+</body>
+</html>

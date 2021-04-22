@@ -174,6 +174,6 @@ class __TwigTemplate_620bb39c45470a71de9cced31bb4f07498aabc59672e035f8dd425f971a
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Profiler/open.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
+", "@WebProfiler/Profiler/open.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/open.html.twig");
     }
 }

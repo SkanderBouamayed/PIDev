@@ -698,6 +698,6 @@ class __TwigTemplate_765829ae63ac4d446d888aa6ed7b2e8e63375a3b07bbdd0faa363f3c10b
         <td class=\"font-normal\">{{ migration.execution_time|default('n/a') }}</td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }

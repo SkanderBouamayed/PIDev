@@ -189,6 +189,6 @@ class __TwigTemplate_2529c96686bb542e2df9ca360de806c7fc0cd776edfd0290bc40184c37d
         </div>
     </div>
 </div>
-", "@Twig/Exception/traces.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
+", "@Twig/Exception/traces.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
     }
 }

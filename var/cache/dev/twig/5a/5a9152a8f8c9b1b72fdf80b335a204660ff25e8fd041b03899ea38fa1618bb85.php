@@ -135,6 +135,6 @@ class __TwigTemplate_05dec50636f975a79400da495db675a4f79ee6fbeb102663ba1021b77ee
         </div>
     </body>
 </html>
-", "@Twig/Exception/error.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
+", "@Twig/Exception/error.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/twig-bundle/Resources/views/Exception/error.html.twig");
     }
 }

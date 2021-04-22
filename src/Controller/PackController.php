@@ -8,6 +8,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 /**
  * @Route("/pack")
@@ -15,14 +18,106 @@ use Symfony\Component\Routing\Annotation\Route;
 class PackController extends AbstractController
 {
     /**
-     * @Route("/", name="pack_index", methods={"GET"})
+     * @Route("/index", name="pack_index", methods={"GET"})
      */
-    public function index(): Response
+    public function index(Request $request, PaginatorInterface $paginator): Response
+    {
+        $pack = $this->getDoctrine()
+            ->getRepository(Pack::class)
+            ->findAll();
+        $packs = $paginator->paginate(
+        // Doctrine Query, not results
+            $pack,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            5
+        );
+
+        return $this->render('pack/index.html.twig', [
+            'packs' => $packs,
+        ]);
+    }
+    /**
+     * @Route("/pdf", name="pack_pdf", methods={"GET"})
+     */
+    public function pdf(): Response
+    {
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+        $dompdf = new Dompdf($pdfOptions);
+
+        $packs = $this->getDoctrine()
+            ->getRepository(Pack::class)
+            ->findAll();
+
+
+        $html = $this->render('pack/pdf.html.twig', [
+            'packs' => $packs,
+        ]);
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser (force download)
+        $dompdf->stream("mypdf.pdf", [
+            "Attachment" => false
+        ]);
+    }
+
+    /**
+     * @Route("/front", name="pack_index_front", methods={"GET"})
+     */
+    public function frontIndex(): Response
     {
         $packs = $this->getDoctrine()
             ->getRepository(Pack::class)
             ->findAll();
 
+        return $this->render('pack/frontOffice/index.html.twig', [
+            'packs' => $packs,
+        ]);
+    }
+    /**
+     * @Route("/indexPrix", name="pack_index_prix", methods={"GET"})
+     */
+    public function orderedPriceShow(Request $request, PaginatorInterface $paginator):Response{
+        $pack =  $this->getDoctrine()->getRepository(Pack::class)->findBy(
+            array(),
+            array('prix' => 'ASC')
+        );
+        $packs =  $paginator->paginate(
+// Doctrine Query, not results
+            $pack,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            5
+        );
+        return $this->render('pack/index.html.twig', [
+            'packs' => $packs,
+        ]);
+    }
+    /**
+     * @Route("/indexName", name="pack_index_name", methods={"GET"})
+     */
+    public function orderedNameShow(Request $request, PaginatorInterface $paginator):Response{
+        $pack =  $this->getDoctrine()->getRepository(Pack::class)->findBy(
+            array(),
+            array('nom' => 'ASC')
+        );
+        $packs =  $paginator->paginate(
+// Doctrine Query, not results
+            $pack,
+            // Define the page parameter
+            $request->query->getInt('page', 1),
+            // Items per page
+            5
+        );
         return $this->render('pack/index.html.twig', [
             'packs' => $packs,
         ]);
@@ -95,17 +190,4 @@ class PackController extends AbstractController
         return $this->redirectToRoute('pack_index');
     }
 
-    /**
-     * @Route("/user/", name="pack_index_front_office", methods={"GET"})
-     */
-    public function showAll(): Response
-    {
-        $packs = $this->getDoctrine()
-            ->getRepository(Pack::class)
-            ->findAll();
-
-        return $this->render('pack/frontOffice/index.html.twig', [
-            'packs' => $packs,
-        ]);
-    }
 }

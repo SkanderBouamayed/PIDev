@@ -122,6 +122,6 @@ class __TwigTemplate_715a3a798441fde73c1899b865e399e28e41ba0b57befcab0883bab3767
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/table.html.twig", "/opt/lampp/htdocs/pidev/pidev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
+", "@WebProfiler/Profiler/table.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/table.html.twig");
     }
 }

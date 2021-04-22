@@ -133,6 +133,6 @@ class __TwigTemplate_fc150bae9f309f0f353791fcf996b7e1519c42c40c012ec55ab5fa08ce3
 
     <a href=\"{{ path('pack_index') }}\">back to list</a>
 {% endblock %}
-", "pack/new.html.twig", "/opt/lampp/htdocs/pidev/pidev/templates/pack/new.html.twig");
+", "pack/new.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/new.html.twig");
     }
 }
