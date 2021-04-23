@@ -87,7 +87,7 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
 
         // line 6
-        echo "        <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+        echo "        <input id=\"myInput\" onkeyup=\"myFunction()\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
 
 ";
         
@@ -214,6 +214,14 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
         </div>
     </div>
 </div>
+    <div class=\"col-lg-6\">
+        <div class=\"au-card m-b-30\">
+            <div class=\"au-card-inner\">
+                <h3 class=\"title-2 m-b-40\">All Orders</h3>
+                <canvas id=\"doughutChart\"></canvas>
+            </div>
+        </div>
+    </div>
 
 ";
         
@@ -224,7 +232,7 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
 
     }
 
-    // line 69
+    // line 77
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -234,29 +242,83 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
 
-        // line 70
-        echo "    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById(\"myInput\");
-            filter = input.value.toUpperCase();
-            table = document.getElementById(\"myTable\");
-            tr = table.getElementsByTagName(\"tr\");
+        // line 78
+        echo "    <script> try {
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName(\"td\")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = \"\";
-                    } else {
-                        tr[i].style.display = \"none\";
-                    }
-                }
-            }
+            //doughut chart
+            var ctx = document.getElementById(\"doughutChart\");
+            if (ctx) {
+                ctx.height = 175;
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [
+                                ";
+        // line 89
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["counts"]) || array_key_exists("counts", $context) ? $context["counts"] : (function () { throw new RuntimeError('Variable "counts" does not exist.', 89, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["count"]) {
+            // line 90
+            echo "                                ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["count"], "nombre", [], "any", false, false, false, 90), "html", null, true);
+            echo ",
+                                ";
         }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['count'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 91
+        echo " 0],
+                            backgroundColor: [
+                                \"rgb(60, 179, 113,0.9)\",
+                                \"rgb(255, 80, 82,0.9)\",
+                                \"rgb(255, 165, 0,0.9)\"
+
+                            ],
+                            hoverBackgroundColor: [
+                                \"rgb(60, 179, 113,1)\",
+                                \"rgb(255, 80, 82,1)\",
+                                \"rgb(255, 165, 0,1)\"
+                            ]
+
+                        }],
+                        labels: [
+                            ";
+        // line 106
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["counts"]) || array_key_exists("counts", $context) ? $context["counts"] : (function () { throw new RuntimeError('Variable "counts" does not exist.', 106, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["count"]) {
+            // line 107
+            echo "                            \"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["count"], "status", [], "any", false, false, false, 107), "html", null, true);
+            echo "\",
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['count'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 109
+        echo "                        ]
+                    },
+                    options: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                fontFamily: 'Poppins'
+                            }
+
+                        },
+                        responsive: true
+                    }
+                });
+            }
+
+
+        } catch (error) {
+            console.log(error);
+        }
+
     </script>
 ";
         
@@ -279,7 +341,7 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
 
     public function getDebugInfo()
     {
-        return array (  238 => 70,  228 => 69,  212 => 63,  205 => 59,  199 => 55,  190 => 51,  180 => 46,  176 => 45,  172 => 44,  166 => 41,  161 => 39,  157 => 38,  153 => 37,  149 => 35,  144 => 34,  124 => 17,  119 => 15,  112 => 10,  102 => 9,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  302 => 109,  293 => 107,  289 => 106,  272 => 91,  263 => 90,  259 => 89,  246 => 78,  236 => 77,  212 => 63,  205 => 59,  199 => 55,  190 => 51,  180 => 46,  176 => 45,  172 => 44,  166 => 41,  161 => 39,  157 => 38,  153 => 37,  149 => 35,  144 => 34,  124 => 17,  119 => 15,  112 => 10,  102 => 9,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -289,7 +351,7 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
 {% block title %}Orders index{% endblock %}
 
     {% block search %}
-        <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+        <input id=\"myInput\" onkeyup=\"myFunction()\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
 
 {% endblock %}
 {% block body %}
@@ -350,31 +412,68 @@ class __TwigTemplate_a92e1f15c726d3bde48eb0a92c7fa77a33e83916c0b9399a0745cd8c498
         </div>
     </div>
 </div>
+    <div class=\"col-lg-6\">
+        <div class=\"au-card m-b-30\">
+            <div class=\"au-card-inner\">
+                <h3 class=\"title-2 m-b-40\">All Orders</h3>
+                <canvas id=\"doughutChart\"></canvas>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 {% block scripts %}
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById(\"myInput\");
-            filter = input.value.toUpperCase();
-            table = document.getElementById(\"myTable\");
-            tr = table.getElementsByTagName(\"tr\");
+    <script> try {
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName(\"td\")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = \"\";
-                    } else {
-                        tr[i].style.display = \"none\";
+            //doughut chart
+            var ctx = document.getElementById(\"doughutChart\");
+            if (ctx) {
+                ctx.height = 175;
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [
+                                {% for count in counts %}
+                                {{count.nombre}},
+                                {% endfor %} 0],
+                            backgroundColor: [
+                                \"rgb(60, 179, 113,0.9)\",
+                                \"rgb(255, 80, 82,0.9)\",
+                                \"rgb(255, 165, 0,0.9)\"
+
+                            ],
+                            hoverBackgroundColor: [
+                                \"rgb(60, 179, 113,1)\",
+                                \"rgb(255, 80, 82,1)\",
+                                \"rgb(255, 165, 0,1)\"
+                            ]
+
+                        }],
+                        labels: [
+                            {% for count in counts %}
+                            \"{{count.status}}\",
+                            {% endfor %}
+                        ]
+                    },
+                    options: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                fontFamily: 'Poppins'
+                            }
+
+                        },
+                        responsive: true
                     }
-                }
+                });
             }
+
+
+        } catch (error) {
+            console.log(error);
         }
+
     </script>
 {% endblock %}
 ", "orders/index.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/orders/index.html.twig");

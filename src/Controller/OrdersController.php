@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Orders;
 use App\Entity\Pack;
 use App\Form\OrdersType;
+use App\Repository\OrdersRepository;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Knp\Component\Pager\PaginatorInterface;
@@ -65,11 +66,12 @@ class OrdersController extends AbstractController
     /**
      * @Route("/", name="orders_index", methods={"GET"})
      */
-    public function index(Request $request, PaginatorInterface $paginator): Response
+    public function index(Request $request, PaginatorInterface $paginator, OrdersRepository $ordersRepository): Response
     {
         $order = $this->getDoctrine()
             ->getRepository(Orders::class)
             ->findAll();
+
 $orders = $paginator->paginate(
 // Doctrine Query, not results
     $order,
@@ -80,15 +82,16 @@ $orders = $paginator->paginate(
 );
         return $this->render('orders/index.html.twig', [
             'orders' => $orders,
+            'counts' => $ordersRepository->countOrdersByStatus()
         ]);
     }
     /**
      * @Route("/indexPack", name="order_index_pack", methods={"GET"})
      */
-    public function orderedPackShow(Request $request, PaginatorInterface $paginator):Response{
+    public function orderedPackShow(Request $request, PaginatorInterface $paginator, OrdersRepository $ordersRepository):Response{
         $order =  $this->getDoctrine()->getRepository(Orders::class)->findBy(
             array(),
-            array('idPack' => 'ASC')
+            array('idpack' => 'DESC')
         );
         $orders =  $paginator->paginate(
 // Doctrine Query, not results
@@ -100,15 +103,16 @@ $orders = $paginator->paginate(
         );
         return $this->render('orders/index.html.twig', [
             'orders' => $orders,
+            'counts' => $ordersRepository->countOrdersByStatus()
         ]);
     }
     /**
      * @Route("/indexStatus", name="order_index_status", methods={"GET"})
      */
-    public function orderedStatusShow(Request $request, PaginatorInterface $paginator):Response{
+    public function orderedStatusShow(Request $request, PaginatorInterface $paginator, OrdersRepository $ordersRepository):Response{
         $order =  $this->getDoctrine()->getRepository(Orders::class)->findBy(
             array(),
-            array('nom' => 'ASC')
+            array('status' => 'ASC')
         );
         $orders =  $paginator->paginate(
 // Doctrine Query, not results
@@ -120,6 +124,7 @@ $orders = $paginator->paginate(
         );
         return $this->render('orders/index.html.twig', [
             'orders' => $orders,
+            'counts' => $ordersRepository->countOrdersByStatus()
         ]);
     }
     /**

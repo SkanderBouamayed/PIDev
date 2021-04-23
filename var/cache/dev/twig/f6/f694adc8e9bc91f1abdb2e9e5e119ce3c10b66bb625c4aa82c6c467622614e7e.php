@@ -28,7 +28,6 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
             'title' => [$this, 'block_title'],
             'search' => [$this, 'block_search'],
             'body' => [$this, 'block_body'],
-            'scripts' => [$this, 'block_scripts'],
         ];
     }
 
@@ -87,7 +86,7 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
 
         // line 5
-        echo "    <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+        echo "    <input id=\"myInput\" onkeyup=\"myFunction()\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -227,49 +226,6 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     }
 
-    // line 76
-    public function block_scripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
-
-        // line 77
-        echo "    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById(\"myInput\");
-            filter = input.value.toUpperCase();
-            table = document.getElementById(\"myTable\");
-            tr = table.getElementsByTagName(\"tr\");
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName(\"td\")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = \"\";
-                    } else {
-                        tr[i].style.display = \"none\";
-                    }
-                }
-            }
-        }
-    </script>
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
     public function getTemplateName()
     {
         return "pack/index.html.twig";
@@ -282,7 +238,7 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     public function getDebugInfo()
     {
-        return array (  241 => 77,  231 => 76,  213 => 68,  206 => 64,  200 => 60,  186 => 52,  180 => 49,  173 => 45,  169 => 44,  164 => 42,  159 => 40,  156 => 39,  152 => 38,  131 => 20,  124 => 16,  119 => 14,  111 => 8,  101 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
+        return array (  212 => 68,  205 => 64,  199 => 60,  185 => 52,  179 => 49,  172 => 45,  168 => 44,  163 => 42,  158 => 40,  155 => 39,  151 => 38,  130 => 20,  123 => 16,  118 => 14,  110 => 8,  100 => 7,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -291,7 +247,7 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
 {% block title %}Packs{% endblock %}
 {% block search %}
-    <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+    <input id=\"myInput\" onkeyup=\"myFunction()\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
     {% endblock %}
 {% block body %}
     <h1>Packs</h1>
@@ -361,31 +317,6 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
     <!-- END DATA TABLE -->
 
 
-{% endblock %}
-{% block scripts %}
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById(\"myInput\");
-            filter = input.value.toUpperCase();
-            table = document.getElementById(\"myTable\");
-            tr = table.getElementsByTagName(\"tr\");
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName(\"td\")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = \"\";
-                    } else {
-                        tr[i].style.display = \"none\";
-                    }
-                }
-            }
-        }
-    </script>
 {% endblock %}", "pack/index.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/index.html.twig");
     }
 }

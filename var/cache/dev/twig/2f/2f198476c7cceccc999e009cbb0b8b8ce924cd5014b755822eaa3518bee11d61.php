@@ -442,10 +442,33 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
         // line 284
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/js/main.js"), "html", null, true);
         echo "\"></script>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById(\"myInput\");
+        filter = input.value.toUpperCase();
+        table = document.getElementById(\"myTable\");
+        tr = table.getElementsByTagName(\"tr\");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName(\"td\")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = \"\";
+                } else {
+                    tr[i].style.display = \"none\";
+                }
+            }
+        }
+    }
+</script>
 ";
-        // line 285
+        // line 308
         $this->displayBlock('scripts', $context, $blocks);
-        // line 287
+        // line 310
         echo "
 
 </body>
@@ -501,7 +524,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
     }
 
-    // line 285
+    // line 308
     public function block_scripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -531,7 +554,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
     public function getDebugInfo()
     {
-        return array (  505 => 285,  495 => 252,  485 => 251,  475 => 82,  465 => 81,  449 => 287,  447 => 285,  443 => 284,  436 => 280,  432 => 279,  428 => 278,  424 => 277,  419 => 275,  415 => 274,  410 => 272,  406 => 271,  402 => 270,  397 => 268,  392 => 266,  388 => 265,  383 => 263,  371 => 253,  369 => 251,  324 => 209,  312 => 200,  254 => 145,  242 => 136,  230 => 127,  205 => 105,  192 => 95,  178 => 83,  176 => 81,  158 => 66,  151 => 62,  140 => 54,  125 => 42,  119 => 39,  115 => 38,  111 => 37,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  89 => 30,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  46 => 1,);
+        return array (  528 => 308,  518 => 252,  508 => 251,  498 => 82,  488 => 81,  472 => 310,  470 => 308,  443 => 284,  436 => 280,  432 => 279,  428 => 278,  424 => 277,  419 => 275,  415 => 274,  410 => 272,  406 => 271,  402 => 270,  397 => 268,  392 => 266,  388 => 265,  383 => 263,  371 => 253,  369 => 251,  324 => 209,  312 => 200,  254 => 145,  242 => 136,  230 => 127,  205 => 105,  192 => 95,  178 => 83,  176 => 81,  158 => 66,  151 => 62,  140 => 54,  125 => 42,  119 => 39,  115 => 38,  111 => 37,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  89 => 30,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -820,6 +843,29 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
 <!-- Main JS-->
 <script src=\"{{ asset ('backoffice/js/main.js') }}\"></script>
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById(\"myInput\");
+        filter = input.value.toUpperCase();
+        table = document.getElementById(\"myTable\");
+        tr = table.getElementsByTagName(\"tr\");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName(\"td\")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = \"\";
+                } else {
+                    tr[i].style.display = \"none\";
+                }
+            }
+        }
+    }
+</script>
 {% block scripts %}
 {% endblock %}
 

@@ -2,7 +2,7 @@
 
 {% block title %}Packs{% endblock %}
 {% block search %}
-    <input id="myInput" class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+    <input id="myInput" onkeyup="myFunction()" class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
     {% endblock %}
 {% block body %}
     <h1>Packs</h1>
@@ -72,29 +72,4 @@
     <!-- END DATA TABLE -->
 
 
-{% endblock %}
-{% block scripts %}
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-    </script>
 {% endblock %}

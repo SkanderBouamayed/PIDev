@@ -3,7 +3,7 @@
 {% block title %}Orders index{% endblock %}
 
     {% block search %}
-        <input id="myInput" class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+        <input id="myInput" onkeyup="myFunction()" class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
 
 {% endblock %}
 {% block body %}
@@ -64,30 +64,67 @@
         </div>
     </div>
 </div>
+    <div class="col-lg-6">
+        <div class="au-card m-b-30">
+            <div class="au-card-inner">
+                <h3 class="title-2 m-b-40">All Orders</h3>
+                <canvas id="doughutChart"></canvas>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}
 {% block scripts %}
-    <script>
-        function myFunction() {
-            // Declare variables
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
+    <script> try {
 
-            // Loop through all table rows, and hide those who don't match the search query
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+            //doughut chart
+            var ctx = document.getElementById("doughutChart");
+            if (ctx) {
+                ctx.height = 175;
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        datasets: [{
+                            data: [
+                                {% for count in counts %}
+                                {{count.nombre}},
+                                {% endfor %} 0],
+                            backgroundColor: [
+                                "rgb(60, 179, 113,0.9)",
+                                "rgb(255, 80, 82,0.9)",
+                                "rgb(255, 165, 0,0.9)"
+
+                            ],
+                            hoverBackgroundColor: [
+                                "rgb(60, 179, 113,1)",
+                                "rgb(255, 80, 82,1)",
+                                "rgb(255, 165, 0,1)"
+                            ]
+
+                        }],
+                        labels: [
+                            {% for count in counts %}
+                            "{{count.status}}",
+                            {% endfor %}
+                        ]
+                    },
+                    options: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                fontFamily: 'Poppins'
+                            }
+
+                        },
+                        responsive: true
                     }
-                }
+                });
             }
+
+
+        } catch (error) {
+            console.log(error);
         }
+
     </script>
 {% endblock %}

@@ -612,7 +612,7 @@ class __TwigTemplate_19dbd12243c611572e64df17601c1b51ccbb1de25af76b13f37a98a9f2d
         // line 449
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("frontoffice/js/main.js"), "html", null, true);
         echo "\"></script>
-</body>
+
 
 <!-- Mirrored from dmitryvolkov.me/demo/volna/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Apr 2021 10:30:01 GMT -->
 </html>";
@@ -1108,7 +1108,7 @@ class __TwigTemplate_19dbd12243c611572e64df17601c1b51ccbb1de25af76b13f37a98a9f2d
 <script src=\"{{ asset('frontoffice/js/jquery.inputmask.min.js')}}\"></script>
 <script src=\"{{ asset('frontoffice/js/plyr.min.js')}}\"></script>
 <script src=\"{{ asset('frontoffice/js/main.js')}}\"></script>
-</body>
+
 
 <!-- Mirrored from dmitryvolkov.me/demo/volna/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 11 Apr 2021 10:30:01 GMT -->
 </html>", "front_base.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/front_base.html.twig");
