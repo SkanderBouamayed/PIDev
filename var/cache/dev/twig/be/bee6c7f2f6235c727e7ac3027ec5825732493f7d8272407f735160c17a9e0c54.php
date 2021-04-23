@@ -85,23 +85,34 @@ class __TwigTemplate_6592fe686bfd6bbf3137325141ff6911b6d2fd39c4be5e20ef16adeb247
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Pack</h1>
+        echo "    <div class=\"table-data__tool\">
+        <h1>Pack</h1>
+        <div class=\"table-data__tool-right\">
+            <button class=\"au-btn au-btn-icon au-btn--blue2 au-btn--small\">
+                <a href=\"";
+        // line 10
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index");
+        echo "\"><i class=\"fa  fa-arrow-circle-left\"></i>back to list</a></button>
+
+        </div>
+    </div>
 
     ";
-        // line 8
+        // line 15
         echo twig_include($this->env, $context, "pack/_form.html.twig", ["button_label" => "Update"]);
         echo "
 
 
-
-    ";
-        // line 12
+    <div class=\"table-data__tool\">
+        <h1></h1>
+        <div class=\"table-data__tool-right\">
+            ";
+        // line 21
         echo twig_include($this->env, $context, "pack/_delete_form.html.twig");
         echo "
-    <a href=\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index");
-        echo "\">back to list</a>
+        </div>
+    </div>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -123,7 +134,7 @@ class __TwigTemplate_6592fe686bfd6bbf3137325141ff6911b6d2fd39c4be5e20ef16adeb247
 
     public function getDebugInfo()
     {
-        return array (  103 => 13,  99 => 12,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  111 => 21,  102 => 15,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -133,14 +144,25 @@ class __TwigTemplate_6592fe686bfd6bbf3137325141ff6911b6d2fd39c4be5e20ef16adeb247
 {% block title %}Edit Pack{% endblock %}
 
 {% block body %}
-    <h1>Edit Pack</h1>
+    <div class=\"table-data__tool\">
+        <h1>Pack</h1>
+        <div class=\"table-data__tool-right\">
+            <button class=\"au-btn au-btn-icon au-btn--blue2 au-btn--small\">
+                <a href=\"{{ path('pack_index') }}\"><i class=\"fa  fa-arrow-circle-left\"></i>back to list</a></button>
+
+        </div>
+    </div>
 
     {{ include('pack/_form.html.twig', {'button_label': 'Update'}) }}
 
 
+    <div class=\"table-data__tool\">
+        <h1></h1>
+        <div class=\"table-data__tool-right\">
+            {{ include('pack/_delete_form.html.twig') }}
+        </div>
+    </div>
 
-    {{ include('pack/_delete_form.html.twig') }}
-    <a href=\"{{ path('pack_index') }}\">back to list</a>
 {% endblock %}
 ", "pack/edit.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/edit.html.twig");
     }

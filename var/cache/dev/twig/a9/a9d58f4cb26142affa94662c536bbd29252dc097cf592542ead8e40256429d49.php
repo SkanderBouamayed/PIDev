@@ -84,56 +84,71 @@ class __TwigTemplate_1c90994fce49390592967513a10774e3cc51ab1b24f1ba8700f3cb1b4dd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "    <h1>Pack</h1>
+        echo "<div class=\"table-data__tool\">
+    <h1>Pack</h1>
+    <div class=\"table-data__tool-right\">
+        <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
+            <a href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index");
+        echo "\"><i class=\"fa  fa-arrow-circle-left\"></i>back to list</a></button>
+
+    </div>
+    </div>
+
 
     <table class=\"table\">
         <tbody>
             <tr>
                 <th>Id</th>
                 <td>";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 19, $this->source); })()), "id", [], "any", false, false, false, 19), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Nom</th>
                 <td>";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 16, $this->source); })()), "nom", [], "any", false, false, false, 16), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 23, $this->source); })()), "nom", [], "any", false, false, false, 23), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Prix</th>
                 <td>";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 20, $this->source); })()), "prix", [], "any", false, false, false, 20), "html", null, true);
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 27, $this->source); })()), "prix", [], "any", false, false, false, 27), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 24, $this->source); })()), "description", [], "any", false, false, false, 24), "html", null, true);
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 31, $this->source); })()), "description", [], "any", false, false, false, 31), "html", null, true);
         echo "</td>
             </tr>
         </tbody>
     </table>
 
-    <a href=\"";
-        // line 29
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index");
-        echo "\">back to list</a>
+    <div class=\"table-data__tool\">
+<p></p>
+        <div class=\"table-data__tool-left\">
 
-    <a href=\"";
-        // line 31
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
-        echo "\">edit</a>
+            <button class=\"au-btn au-btn-icon au-btn--blue2 au-btn--small\">
+                <a href=\"";
+        // line 41
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["pack"]) || array_key_exists("pack", $context) ? $context["pack"] : (function () { throw new RuntimeError('Variable "pack" does not exist.', 41, $this->source); })()), "id", [], "any", false, false, false, 41)]), "html", null, true);
+        echo "\"><i class=\"fa  fa-arrow-circle-left\"></i>Edit</a></button>
 
-    ";
-        // line 33
+        </div>";
+        // line 43
         echo twig_include($this->env, $context, "pack/_delete_form.html.twig");
         echo "
+    </div>
+
+
+
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -155,7 +170,7 @@ class __TwigTemplate_1c90994fce49390592967513a10774e3cc51ab1b24f1ba8700f3cb1b4dd
 
     public function getDebugInfo()
     {
-        return array (  135 => 33,  130 => 31,  125 => 29,  117 => 24,  110 => 20,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  145 => 43,  140 => 41,  127 => 31,  120 => 27,  113 => 23,  106 => 19,  93 => 9,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -164,8 +179,15 @@ class __TwigTemplate_1c90994fce49390592967513a10774e3cc51ab1b24f1ba8700f3cb1b4dd
 
 {% block title %}Pack{% endblock %}
 
-{% block body %}
+{% block body %}<div class=\"table-data__tool\">
     <h1>Pack</h1>
+    <div class=\"table-data__tool-right\">
+        <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
+            <a href=\"{{ path('pack_index') }}\"><i class=\"fa  fa-arrow-circle-left\"></i>back to list</a></button>
+
+    </div>
+    </div>
+
 
     <table class=\"table\">
         <tbody>
@@ -188,11 +210,19 @@ class __TwigTemplate_1c90994fce49390592967513a10774e3cc51ab1b24f1ba8700f3cb1b4dd
         </tbody>
     </table>
 
-    <a href=\"{{ path('pack_index') }}\">back to list</a>
+    <div class=\"table-data__tool\">
+<p></p>
+        <div class=\"table-data__tool-left\">
 
-    <a href=\"{{ path('pack_edit', {'id': pack.id}) }}\">edit</a>
+            <button class=\"au-btn au-btn-icon au-btn--blue2 au-btn--small\">
+                <a href=\"{{ path('pack_edit', {'id': pack.id}) }}\"><i class=\"fa  fa-arrow-circle-left\"></i>Edit</a></button>
 
-    {{ include('pack/_delete_form.html.twig') }}
+        </div>{{ include('pack/_delete_form.html.twig') }}
+    </div>
+
+
+
+
 {% endblock %}
 ", "pack/show.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/show.html.twig");
     }

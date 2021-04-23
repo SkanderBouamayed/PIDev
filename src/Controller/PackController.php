@@ -78,7 +78,7 @@ class PackController extends AbstractController
             ->getRepository(Pack::class)
             ->findAll();
 
-        return $this->render('pack/frontOffice/index.html.twig', [
+        return $this->render('pack/front_index.html.twig', [
             'packs' => $packs,
         ]);
     }

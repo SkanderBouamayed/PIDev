@@ -26,7 +26,9 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'search' => [$this, 'block_search'],
             'body' => [$this, 'block_body'],
+            'scripts' => [$this, 'block_scripts'],
         ];
     }
 
@@ -74,7 +76,28 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     }
 
-    // line 5
+    // line 4
+    public function block_search($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
+
+        // line 5
+        echo "    <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 7
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,7 +107,7 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 8
         echo "    <h1>Packs</h1>
     <!-- DATA TABLE -->
     <div class=\"table-data__tool\">
@@ -92,19 +115,19 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
             <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
                 <a href=\"";
-        // line 12
+        // line 14
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index_prix");
         echo "\"> <i class=\"zmdi zmdi-plus\"></i>Sort by price</a></button>
                 <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
                     <a href=\"";
-        // line 14
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index_name");
         echo "\"> <i class=\"zmdi zmdi-plus\"></i>Sort by name</a></button>
                  </div>
         <div class=\"table-data__tool-right\">
             <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
                 <a href=\"";
-        // line 18
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_new");
         echo "\"> <i class=\"zmdi zmdi-plus\"></i>add item</a></button>
 
@@ -112,16 +135,11 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     </div>
     <div class=\"table-responsive table-responsive-data2\">
-        <table class=\"table table-data2\">
+        <table id=\"myTable\" class=\"table table-data2\">
             <thead>
             <tr>
-                <th>
-                    <label class=\"au-checkbox\">
-                        <input type=\"checkbox\">
-                        <span class=\"au-checkmark\"></span>
-                    </label>
-                </th>
-                <th>id</th>
+
+                <th>#</th>
                 <th>name</th>
                 <th>description</th>
                 <th>price</th>
@@ -130,53 +148,44 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
             </thead>
             <tbody>
             ";
-        // line 41
+        // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 41, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 38, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["pack"]) {
-            // line 42
+            // line 39
             echo "            <tr class=\"tr-shadow\">
-                <td>
-                    <label class=\"au-checkbox\">
-                        <input type=\"checkbox\">
-                        <span class=\"au-checkmark\"></span>
-                    </label>
-                </td>
                 <td>";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 49), "html", null, true);
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 40), "html", null, true);
             echo "</td>
                 <td>
                     <span class=\"block-email\">";
-            // line 51
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "nom", [], "any", false, false, false, 51), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "nom", [], "any", false, false, false, 42), "html", null, true);
             echo "</span>
                 </td>
                 <td class=\"desc\">";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "description", [], "any", false, false, false, 53), "html", null, true);
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "description", [], "any", false, false, false, 44), "html", null, true);
             echo "</td>
                 <td>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "prix", [], "any", false, false, false, 54), "html", null, true);
+            // line 45
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["pack"], "prix", [], "any", false, false, false, 45), "html", null, true);
             echo "</td>
                 <td>
-                    <div class=\"table-data-feature\">
+                    <div id=\"myTable\" class=\"table-data-feature\">
                         <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Show\">
                             <a href=\"";
-            // line 58
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 58)]), "html", null, true);
-            echo "\"><i class=\"zmdi zmdi-mail-send\"></i></a>
+            // line 49
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_show", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 49)]), "html", null, true);
+            echo "\"><i class=\"fa  fa-tasks\"></i></a>
                         </button>
                         <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Edit\">
                             <a href=\"";
-            // line 61
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 61)]), "html", null, true);
+            // line 52
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["pack"], "id", [], "any", false, false, false, 52)]), "html", null, true);
             echo "\"><i class=\"zmdi zmdi-edit\"></i></a>
                         </button>
-                        <!--button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete\">
-                            <i class=\"zmdi zmdi-delete\"></i>
-                        </button-->
 
                     </div>
                 </td>
@@ -187,20 +196,20 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['pack'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 72
+        // line 60
         echo "            </tbody>
         </table>
         <div id=\"bottom\">
         <div class=\"navigation\">
             ";
-        // line 76
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 76, $this->source); })()));
+        // line 64
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["packs"]) || array_key_exists("packs", $context) ? $context["packs"] : (function () { throw new RuntimeError('Variable "packs" does not exist.', 64, $this->source); })()));
         echo "
         </div>
         <div class=\"table-data__tool-right\">
             <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">
                 <a href=\"";
-        // line 80
+        // line 68
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_pdf");
         echo "\"> <i class=\"zmdi zmdi-plus\"></i>Generate PDF</a></button>
         </div>
@@ -209,6 +218,49 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
     <!-- END DATA TABLE -->
 
 
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 76
+    public function block_scripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        // line 77
+        echo "    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById(\"myInput\");
+            filter = input.value.toUpperCase();
+            table = document.getElementById(\"myTable\");
+            tr = table.getElementsByTagName(\"tr\");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName(\"td\")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = \"\";
+                    } else {
+                        tr[i].style.display = \"none\";
+                    }
+                }
+            }
+        }
+    </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -230,7 +282,7 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     public function getDebugInfo()
     {
-        return array (  204 => 80,  197 => 76,  191 => 72,  174 => 61,  168 => 58,  161 => 54,  157 => 53,  152 => 51,  147 => 49,  138 => 42,  134 => 41,  108 => 18,  101 => 14,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  241 => 77,  231 => 76,  213 => 68,  206 => 64,  200 => 60,  186 => 52,  180 => 49,  173 => 45,  169 => 44,  164 => 42,  159 => 40,  156 => 39,  152 => 38,  131 => 20,  124 => 16,  119 => 14,  111 => 8,  101 => 7,  90 => 5,  80 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -238,7 +290,9 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
         return new Source("{% extends 'base.html.twig' %}
 
 {% block title %}Packs{% endblock %}
-
+{% block search %}
+    <input id=\"myInput\" class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
+    {% endblock %}
 {% block body %}
     <h1>Packs</h1>
     <!-- DATA TABLE -->
@@ -258,16 +312,11 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
     </div>
     <div class=\"table-responsive table-responsive-data2\">
-        <table class=\"table table-data2\">
+        <table id=\"myTable\" class=\"table table-data2\">
             <thead>
             <tr>
-                <th>
-                    <label class=\"au-checkbox\">
-                        <input type=\"checkbox\">
-                        <span class=\"au-checkmark\"></span>
-                    </label>
-                </th>
-                <th>id</th>
+
+                <th>#</th>
                 <th>name</th>
                 <th>description</th>
                 <th>price</th>
@@ -277,12 +326,6 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
             <tbody>
             {% for pack in packs %}
             <tr class=\"tr-shadow\">
-                <td>
-                    <label class=\"au-checkbox\">
-                        <input type=\"checkbox\">
-                        <span class=\"au-checkmark\"></span>
-                    </label>
-                </td>
                 <td>{{ pack.id }}</td>
                 <td>
                     <span class=\"block-email\">{{ pack.nom }}</span>
@@ -290,16 +333,13 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
                 <td class=\"desc\">{{ pack.description }}</td>
                 <td>{{ pack.prix }}</td>
                 <td>
-                    <div class=\"table-data-feature\">
+                    <div id=\"myTable\" class=\"table-data-feature\">
                         <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Show\">
-                            <a href=\"{{ path('pack_show', {'id': pack.id}) }}\"><i class=\"zmdi zmdi-mail-send\"></i></a>
+                            <a href=\"{{ path('pack_show', {'id': pack.id}) }}\"><i class=\"fa  fa-tasks\"></i></a>
                         </button>
                         <button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Edit\">
                             <a href=\"{{ path('pack_edit', {'id': pack.id}) }}\"><i class=\"zmdi zmdi-edit\"></i></a>
                         </button>
-                        <!--button class=\"item\" data-toggle=\"tooltip\" data-placement=\"top\" title=\"Delete\">
-                            <i class=\"zmdi zmdi-delete\"></i>
-                        </button-->
 
                     </div>
                 </td>
@@ -322,6 +362,30 @@ class __TwigTemplate_2439e04b641a9f9094c8eb757f67337009b1ae8a13008cce289667ddc01
 
 
 {% endblock %}
-", "pack/index.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/index.html.twig");
+{% block scripts %}
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById(\"myInput\");
+            filter = input.value.toUpperCase();
+            table = document.getElementById(\"myTable\");
+            tr = table.getElementsByTagName(\"tr\");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName(\"td\")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = \"\";
+                    } else {
+                        tr[i].style.display = \"none\";
+                    }
+                }
+            }
+        }
+    </script>
+{% endblock %}", "pack/index.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/index.html.twig");
     }
 }

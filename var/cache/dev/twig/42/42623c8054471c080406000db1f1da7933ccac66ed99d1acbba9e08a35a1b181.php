@@ -46,13 +46,19 @@ class __TwigTemplate_420efdd00b77a3e7b0807dd54e699c11027cb4f5dc21f89e6a1b941c82e
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
         echo "
-    <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">";
-        // line 3
-        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
+<div class=\"table-data__tool\">
+
+    <div class=\"table-data__tool-right\">
+        <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">";
+        // line 6
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 6, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
-";
-        // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
+
+    </div><h1></h1>
+</div>
+   ";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_end');
         echo "
 ";
         
@@ -75,15 +81,21 @@ class __TwigTemplate_420efdd00b77a3e7b0807dd54e699c11027cb4f5dc21f89e6a1b941c82e
 
     public function getDebugInfo()
     {
-        return array (  55 => 4,  51 => 3,  47 => 2,  43 => 1,);
+        return array (  61 => 10,  54 => 6,  47 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
     {{ form_widget(form) }}
-    <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class=\"table-data__tool\">
+
+    <div class=\"table-data__tool-right\">
+        <button class=\"au-btn au-btn-icon au-btn--green au-btn--small\">{{ button_label|default('Save') }}</button>
+
+    </div><h1></h1>
+</div>
+   {{ form_end(form) }}
 ", "pack/_form.html.twig", "/opt/lampp/htdocs/PIDEV/PIDev/templates/pack/_form.html.twig");
     }
 }

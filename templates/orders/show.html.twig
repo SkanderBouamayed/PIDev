@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Orders{% endblock %}
+
+{% block body %}  <div class="table-data__tool">
+    <h1>Orders</h1>
+    <div class="table-data__tool-right">
+        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+         <a href="{{ path('orders_index') }}"><i class="fa  fa-arrow-circle-left"></i>back to list</a></button>
+
+    </div>
+</div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ order.id }}</td>
+            </tr>
+            <tr>
+                <th>Iduser</th>
+                <td>{{ order.iduser }}</td>
+            </tr>
+            <tr>
+                <th>Idpack</th>
+                <td>{{ order.idpack }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ order.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -27,7 +27,9 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
         $this->parent = false;
 
         $this->blocks = [
+            'search' => [$this, 'block_search'],
             'body' => [$this, 'block_body'],
+            'scripts' => [$this, 'block_scripts'],
         ];
     }
 
@@ -127,224 +129,35 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
 <body class=\"animsition\">
 <div class=\"page-wrapper\">
-    <!-- HEADER MOBILE-->
-    <header class=\"header-mobile d-block d-lg-none\">
-        <div class=\"header-mobile__bar\">
-            <div class=\"container-fluid\">
-                <div class=\"header-mobile-inner\">
-                    <a class=\"logo\" href=\"index.html\">
-                        <img src=\"images/icon/logo.png\" alt=\"CoolAdmin\" />
-                    </a>
-                    <button class=\"hamburger hamburger--slider\" type=\"button\">
-                            <span class=\"hamburger-box\">
-                                <span class=\"hamburger-inner\"></span>
-                            </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <nav class=\"navbar-mobile\">
-            <div class=\"container-fluid\">
-                <ul class=\"navbar-mobile__list list-unstyled\">
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"index.html\">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href=\"index2.html\">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href=\"index3.html\">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href=\"index4.html\">Dashboard 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href=\"chart.html\">
-                            <i class=\"fas fa-chart-bar\"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href=\"table.html\">
-                            <i class=\"fas fa-table\"></i>Tables</a>
-                    </li>
-                    <li>
-                        <a href=\"form.html\">
-                            <i class=\"far fa-check-square\"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href=\"calendar.html\">
-                            <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href=\"map.html\">
-                            <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-copy\"></i>Pages</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"login.html\">Login</a>
-                            </li>
-                            <li>
-                                <a href=\"register.html\">Register</a>
-                            </li>
-                            <li>
-                                <a href=\"forget-pass.html\">Forget Password</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-desktop\"></i>UI Elements</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"button.html\">Button</a>
-                            </li>
-                            <li>
-                                <a href=\"badge.html\">Badges</a>
-                            </li>
-                            <li>
-                                <a href=\"tab.html\">Tabs</a>
-                            </li>
-                            <li>
-                                <a href=\"card.html\">Cards</a>
-                            </li>
-                            <li>
-                                <a href=\"alert.html\">Alerts</a>
-                            </li>
-                            <li>
-                                <a href=\"progress-bar.html\">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href=\"modal.html\">Modals</a>
-                            </li>
-                            <li>
-                                <a href=\"switch.html\">Switchs</a>
-                            </li>
-                            <li>
-                                <a href=\"grid.html\">Grids</a>
-                            </li>
-                            <li>
-                                <a href=\"fontawesome.html\">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href=\"typo.html\">Typography</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- END HEADER MOBILE-->
+
 
     <!-- MENU SIDEBAR-->
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"#\">
-                <img src=\"images/icon/logo.png\" alt=\"Cool Admin\" />
+                <img src=\"";
+        // line 54
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/logo.png"), "html", null, true);
+        echo "\" alt=\"Cool Admin\" />
             </a>
         </div>
         <div class=\"menu-sidebar__content js-scrollbar1\">
             <nav class=\"navbar-sidebar\">
                 <ul class=\"list-unstyled navbar__list\">
-                    <li class=\"active has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"index.html\">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href=\"index2.html\">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href=\"index3.html\">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href=\"index4.html\">Dashboard 4</a>
-                            </li>
-                        </ul>
+
+                    <li>
+                        <a href=\"";
+        // line 62
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pack_index");
+        echo "\">
+                            <i class=\"fas fa-tag\"></i>Packs</a>
                     </li>
                     <li>
-                        <a href=\"chart.html\">
-                            <i class=\"fas fa-chart-bar\"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href=\"table.html\">
-                            <i class=\"fas fa-table\"></i>Tables</a>
-                    </li>
-                    <li>
-                        <a href=\"form.html\">
-                            <i class=\"far fa-check-square\"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href=\"calendar.html\">
-                            <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href=\"map.html\">
-                            <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-copy\"></i>Pages</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"login.html\">Login</a>
-                            </li>
-                            <li>
-                                <a href=\"register.html\">Register</a>
-                            </li>
-                            <li>
-                                <a href=\"forget-pass.html\">Forget Password</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-desktop\"></i>UI Elements</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"button.html\">Button</a>
-                            </li>
-                            <li>
-                                <a href=\"badge.html\">Badges</a>
-                            </li>
-                            <li>
-                                <a href=\"tab.html\">Tabs</a>
-                            </li>
-                            <li>
-                                <a href=\"card.html\">Cards</a>
-                            </li>
-                            <li>
-                                <a href=\"alert.html\">Alerts</a>
-                            </li>
-                            <li>
-                                <a href=\"progress-bar.html\">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href=\"modal.html\">Modals</a>
-                            </li>
-                            <li>
-                                <a href=\"switch.html\">Switchs</a>
-                            </li>
-                            <li>
-                                <a href=\"grid.html\">Grids</a>
-                            </li>
-                            <li>
-                                <a href=\"fontawesome.html\">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href=\"typo.html\">Typography</a>
-                            </li>
-                        </ul>
+                        <a href=\"";
+        // line 66
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("orders_index");
+        echo "\">
+                            <i class=\"fas fa-file-text\"></i>Orders</a>
                     </li>
                 </ul>
             </nav>
@@ -358,13 +171,11 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
         <header class=\"header-desktop\">
             <div class=\"section__content section__content--p30\">
                 <div class=\"container-fluid\">
-                    <div class=\"header-wrap\">
-                        <form class=\"form-header\" action=\"\" method=\"POST\">
-                            <input class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
-                            <button class=\"au-btn--submit\" type=\"submit\">
-                                <i class=\"zmdi zmdi-search\"></i>
-                            </button>
-                        </form>
+                    <div class=\"header-wrap\">";
+        // line 81
+        $this->displayBlock('search', $context, $blocks);
+        // line 83
+        echo "
                         <div class=\"header-button\">
                             <div class=\"noti-wrap\">
                                 <div class=\"noti__item js-item-menu\">
@@ -377,7 +188,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <div class=\"mess__item\">
                                             <div class=\"image img-cir img-40\">
                                                 <img src=\"";
-        // line 297
+        // line 95
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-06.jpg"), "html", null, true);
         echo "\" alt=\"Michelle Moreno\" />
                                             </div>
@@ -390,7 +201,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <div class=\"mess__item\">
                                             <div class=\"image img-cir img-40\">
                                                 <img src=\"";
-        // line 307
+        // line 105
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-04.jpg"), "html", null, true);
         echo "\" alt=\"Diane Myers\" />
                                             </div>
@@ -415,7 +226,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <div class=\"email__item\">
                                             <div class=\"image img-cir img-40\">
                                                 <img src=\"";
-        // line 329
+        // line 127
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-06.jpg"), "html", null, true);
         echo "\" alt=\"Cynthia Harvey\" />
                                             </div>
@@ -427,7 +238,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <div class=\"email__item\">
                                             <div class=\"image img-cir img-40\">
                                                 <img src=\"";
-        // line 338
+        // line 136
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-05.jpg"), "html", null, true);
         echo "\" alt=\"Cynthia Harvey\" />
                                             </div>
@@ -439,7 +250,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <div class=\"email__item\">
                                             <div class=\"image img-cir img-40\">
                                                 <img src=\"";
-        // line 347
+        // line 145
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-04.jpg"), "html", null, true);
         echo "\" alt=\"Cynthia Harvey\" />
                                             </div>
@@ -497,28 +308,28 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                 <div class=\"account-item clearfix js-item-menu\">
                                     <div class=\"image\">
                                         <img src=\"";
-        // line 402
+        // line 200
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-01.jpg"), "html", null, true);
         echo "\" alt=\"John Doe\" />
                                     </div>
                                     <div class=\"content\">
-                                        <a class=\"js-acc-btn\" href=\"#\">john doe</a>
+                                        <a class=\"js-acc-btn\" href=\"#\">Skander Bouamayed</a>
                                     </div>
                                     <div class=\"account-dropdown js-dropdown\">
                                         <div class=\"info clearfix\">
                                             <div class=\"image\">
                                                 <a href=\"#\">
                                                     <img src=\"";
-        // line 411
+        // line 209
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/images/icon/avatar-01.jpg"), "html", null, true);
         echo "\" alt=\"John Doe\" />
                                                 </a>
                                             </div>
                                             <div class=\"content\">
                                                 <h5 class=\"name\">
-                                                    <a href=\"#\">john doe</a>
+                                                    <a href=\"#\">Skander Bouamayed</a>
                                                 </h5>
-                                                <span class=\"email\">johndoe@example.com</span>
+                                                <span class=\"email\">skander.bouamayed@esprit.tn</span>
                                             </div>
                                         </div>
                                         <div class=\"account-dropdown__body\">
@@ -554,9 +365,9 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
             <div class=\"section__content section__content--p30\">
                 <div class=\"container-fluid\">
                     ";
-        // line 453
+        // line 251
         $this->displayBlock('body', $context, $blocks);
-        // line 455
+        // line 253
         echo "                </div>
             </div>
         </div>
@@ -568,69 +379,74 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
 <!-- Jquery JS-->
 <script src=\"";
-        // line 465
+        // line 263
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/jquery-3.2.1.min.js"), "html", null, true);
         echo "\"></script>
 <!-- Bootstrap JS-->
 <script src=\"";
-        // line 467
+        // line 265
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/bootstrap-4.1/popper.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 468
+        // line 266
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/bootstrap-4.1/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 <!-- Vendor JS       -->
 <script src=\"";
-        // line 470
+        // line 268
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/slick/slick.min.js"), "html", null, true);
         echo "\">
 </script>
 <script src=\"";
-        // line 472
+        // line 270
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/wow/wow.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 473
+        // line 271
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/animsition/animsition.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 474
+        // line 272
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"), "html", null, true);
         echo "\">
 </script>
 <script src=\"";
-        // line 476
+        // line 274
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/counter-up/jquery.waypoints.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 477
+        // line 275
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/counter-up/jquery.counterup.min.js"), "html", null, true);
         echo "\">
 </script>
 <script src=\"";
-        // line 479
+        // line 277
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/circle-progress/circle-progress.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 480
+        // line 278
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/perfect-scrollbar/perfect-scrollbar.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 481
+        // line 279
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/chartjs/Chart.bundle.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 482
+        // line 280
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/vendor/select2/select2.min.js"), "html", null, true);
         echo "\">
 </script>
 
 <!-- Main JS-->
 <script src=\"";
-        // line 486
+        // line 284
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("backoffice/js/main.js"), "html", null, true);
         echo "\"></script>
+";
+        // line 285
+        $this->displayBlock('scripts', $context, $blocks);
+        // line 287
+        echo "
 
 </body>
 
@@ -645,7 +461,27 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
     }
 
-    // line 453
+    // line 81
+    public function block_search($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "search"));
+
+        // line 82
+        echo "                        ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 251
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -655,8 +491,26 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 454
+        // line 252
         echo "                    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 285
+    public function block_scripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "scripts"));
+
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -677,7 +531,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
     public function getDebugInfo()
     {
-        return array (  659 => 454,  649 => 453,  632 => 486,  625 => 482,  621 => 481,  617 => 480,  613 => 479,  608 => 477,  604 => 476,  599 => 474,  595 => 473,  591 => 472,  586 => 470,  581 => 468,  577 => 467,  572 => 465,  560 => 455,  558 => 453,  513 => 411,  501 => 402,  443 => 347,  431 => 338,  419 => 329,  394 => 307,  381 => 297,  123 => 42,  117 => 39,  113 => 38,  109 => 37,  105 => 36,  101 => 35,  97 => 34,  93 => 33,  87 => 30,  81 => 27,  77 => 26,  73 => 25,  69 => 24,  44 => 1,);
+        return array (  505 => 285,  495 => 252,  485 => 251,  475 => 82,  465 => 81,  449 => 287,  447 => 285,  443 => 284,  436 => 280,  432 => 279,  428 => 278,  424 => 277,  419 => 275,  415 => 274,  410 => 272,  406 => 271,  402 => 270,  397 => 268,  392 => 266,  388 => 265,  383 => 263,  371 => 253,  369 => 251,  324 => 209,  312 => 200,  254 => 145,  242 => 136,  230 => 127,  205 => 105,  192 => 95,  178 => 83,  176 => 81,  158 => 66,  151 => 62,  140 => 54,  125 => 42,  119 => 39,  115 => 38,  111 => 37,  107 => 36,  103 => 35,  99 => 34,  95 => 33,  89 => 30,  83 => 27,  79 => 26,  75 => 25,  71 => 24,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -729,224 +583,26 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
 <body class=\"animsition\">
 <div class=\"page-wrapper\">
-    <!-- HEADER MOBILE-->
-    <header class=\"header-mobile d-block d-lg-none\">
-        <div class=\"header-mobile__bar\">
-            <div class=\"container-fluid\">
-                <div class=\"header-mobile-inner\">
-                    <a class=\"logo\" href=\"index.html\">
-                        <img src=\"images/icon/logo.png\" alt=\"CoolAdmin\" />
-                    </a>
-                    <button class=\"hamburger hamburger--slider\" type=\"button\">
-                            <span class=\"hamburger-box\">
-                                <span class=\"hamburger-inner\"></span>
-                            </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <nav class=\"navbar-mobile\">
-            <div class=\"container-fluid\">
-                <ul class=\"navbar-mobile__list list-unstyled\">
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"index.html\">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href=\"index2.html\">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href=\"index3.html\">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href=\"index4.html\">Dashboard 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href=\"chart.html\">
-                            <i class=\"fas fa-chart-bar\"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href=\"table.html\">
-                            <i class=\"fas fa-table\"></i>Tables</a>
-                    </li>
-                    <li>
-                        <a href=\"form.html\">
-                            <i class=\"far fa-check-square\"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href=\"calendar.html\">
-                            <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href=\"map.html\">
-                            <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-copy\"></i>Pages</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"login.html\">Login</a>
-                            </li>
-                            <li>
-                                <a href=\"register.html\">Register</a>
-                            </li>
-                            <li>
-                                <a href=\"forget-pass.html\">Forget Password</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-desktop\"></i>UI Elements</a>
-                        <ul class=\"navbar-mobile-sub__list list-unstyled js-sub-list\">
-                            <li>
-                                <a href=\"button.html\">Button</a>
-                            </li>
-                            <li>
-                                <a href=\"badge.html\">Badges</a>
-                            </li>
-                            <li>
-                                <a href=\"tab.html\">Tabs</a>
-                            </li>
-                            <li>
-                                <a href=\"card.html\">Cards</a>
-                            </li>
-                            <li>
-                                <a href=\"alert.html\">Alerts</a>
-                            </li>
-                            <li>
-                                <a href=\"progress-bar.html\">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href=\"modal.html\">Modals</a>
-                            </li>
-                            <li>
-                                <a href=\"switch.html\">Switchs</a>
-                            </li>
-                            <li>
-                                <a href=\"grid.html\">Grids</a>
-                            </li>
-                            <li>
-                                <a href=\"fontawesome.html\">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href=\"typo.html\">Typography</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- END HEADER MOBILE-->
+
 
     <!-- MENU SIDEBAR-->
     <aside class=\"menu-sidebar d-none d-lg-block\">
         <div class=\"logo\">
             <a href=\"#\">
-                <img src=\"images/icon/logo.png\" alt=\"Cool Admin\" />
+                <img src=\"{{ asset('backoffice/images/icon/logo.png') }}\" alt=\"Cool Admin\" />
             </a>
         </div>
         <div class=\"menu-sidebar__content js-scrollbar1\">
             <nav class=\"navbar-sidebar\">
                 <ul class=\"list-unstyled navbar__list\">
-                    <li class=\"active has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-tachometer-alt\"></i>Dashboard</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"index.html\">Dashboard 1</a>
-                            </li>
-                            <li>
-                                <a href=\"index2.html\">Dashboard 2</a>
-                            </li>
-                            <li>
-                                <a href=\"index3.html\">Dashboard 3</a>
-                            </li>
-                            <li>
-                                <a href=\"index4.html\">Dashboard 4</a>
-                            </li>
-                        </ul>
+
+                    <li>
+                        <a href=\"{{ path('pack_index') }}\">
+                            <i class=\"fas fa-tag\"></i>Packs</a>
                     </li>
                     <li>
-                        <a href=\"chart.html\">
-                            <i class=\"fas fa-chart-bar\"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href=\"table.html\">
-                            <i class=\"fas fa-table\"></i>Tables</a>
-                    </li>
-                    <li>
-                        <a href=\"form.html\">
-                            <i class=\"far fa-check-square\"></i>Forms</a>
-                    </li>
-                    <li>
-                        <a href=\"calendar.html\">
-                            <i class=\"fas fa-calendar-alt\"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href=\"map.html\">
-                            <i class=\"fas fa-map-marker-alt\"></i>Maps</a>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-copy\"></i>Pages</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"login.html\">Login</a>
-                            </li>
-                            <li>
-                                <a href=\"register.html\">Register</a>
-                            </li>
-                            <li>
-                                <a href=\"forget-pass.html\">Forget Password</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class=\"has-sub\">
-                        <a class=\"js-arrow\" href=\"#\">
-                            <i class=\"fas fa-desktop\"></i>UI Elements</a>
-                        <ul class=\"list-unstyled navbar__sub-list js-sub-list\">
-                            <li>
-                                <a href=\"button.html\">Button</a>
-                            </li>
-                            <li>
-                                <a href=\"badge.html\">Badges</a>
-                            </li>
-                            <li>
-                                <a href=\"tab.html\">Tabs</a>
-                            </li>
-                            <li>
-                                <a href=\"card.html\">Cards</a>
-                            </li>
-                            <li>
-                                <a href=\"alert.html\">Alerts</a>
-                            </li>
-                            <li>
-                                <a href=\"progress-bar.html\">Progress Bars</a>
-                            </li>
-                            <li>
-                                <a href=\"modal.html\">Modals</a>
-                            </li>
-                            <li>
-                                <a href=\"switch.html\">Switchs</a>
-                            </li>
-                            <li>
-                                <a href=\"grid.html\">Grids</a>
-                            </li>
-                            <li>
-                                <a href=\"fontawesome.html\">Fontawesome Icon</a>
-                            </li>
-                            <li>
-                                <a href=\"typo.html\">Typography</a>
-                            </li>
-                        </ul>
+                        <a href=\"{{ path('orders_index') }}\">
+                            <i class=\"fas fa-file-text\"></i>Orders</a>
                     </li>
                 </ul>
             </nav>
@@ -960,13 +616,9 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
         <header class=\"header-desktop\">
             <div class=\"section__content section__content--p30\">
                 <div class=\"container-fluid\">
-                    <div class=\"header-wrap\">
-                        <form class=\"form-header\" action=\"\" method=\"POST\">
-                            <input class=\"au-input au-input--xl\" type=\"text\" name=\"search\" placeholder=\"Search for datas &amp; reports...\" />
-                            <button class=\"au-btn--submit\" type=\"submit\">
-                                <i class=\"zmdi zmdi-search\"></i>
-                            </button>
-                        </form>
+                    <div class=\"header-wrap\">{% block search %}
+                        {% endblock %}
+
                         <div class=\"header-button\">
                             <div class=\"noti-wrap\">
                                 <div class=\"noti__item js-item-menu\">
@@ -1086,7 +738,7 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                         <img src=\"{{ asset('backoffice/images/icon/avatar-01.jpg')}}\" alt=\"John Doe\" />
                                     </div>
                                     <div class=\"content\">
-                                        <a class=\"js-acc-btn\" href=\"#\">john doe</a>
+                                        <a class=\"js-acc-btn\" href=\"#\">Skander Bouamayed</a>
                                     </div>
                                     <div class=\"account-dropdown js-dropdown\">
                                         <div class=\"info clearfix\">
@@ -1097,9 +749,9 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
                                             </div>
                                             <div class=\"content\">
                                                 <h5 class=\"name\">
-                                                    <a href=\"#\">john doe</a>
+                                                    <a href=\"#\">Skander Bouamayed</a>
                                                 </h5>
-                                                <span class=\"email\">johndoe@example.com</span>
+                                                <span class=\"email\">skander.bouamayed@esprit.tn</span>
                                             </div>
                                         </div>
                                         <div class=\"account-dropdown__body\">
@@ -1168,6 +820,9 @@ class __TwigTemplate_41b75135b762f7811bb6a79d1ea388de2c90c3a0b4471b0a68b479af496
 
 <!-- Main JS-->
 <script src=\"{{ asset ('backoffice/js/main.js') }}\"></script>
+{% block scripts %}
+{% endblock %}
+
 
 </body>
 

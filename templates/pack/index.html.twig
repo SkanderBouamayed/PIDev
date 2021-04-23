@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Packs{% endblock %}
-
+{% block search %}
+    <input id="myInput" class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+    {% endblock %}
 {% block body %}
     <h1>Packs</h1>
     <!-- DATA TABLE -->
@@ -21,16 +23,11 @@
 
     </div>
     <div class="table-responsive table-responsive-data2">
-        <table class="table table-data2">
+        <table id="myTable" class="table table-data2">
             <thead>
             <tr>
-                <th>
-                    <label class="au-checkbox">
-                        <input type="checkbox">
-                        <span class="au-checkmark"></span>
-                    </label>
-                </th>
-                <th>id</th>
+
+                <th>#</th>
                 <th>name</th>
                 <th>description</th>
                 <th>price</th>
@@ -40,12 +37,6 @@
             <tbody>
             {% for pack in packs %}
             <tr class="tr-shadow">
-                <td>
-                    <label class="au-checkbox">
-                        <input type="checkbox">
-                        <span class="au-checkmark"></span>
-                    </label>
-                </td>
                 <td>{{ pack.id }}</td>
                 <td>
                     <span class="block-email">{{ pack.nom }}</span>
@@ -53,16 +44,13 @@
                 <td class="desc">{{ pack.description }}</td>
                 <td>{{ pack.prix }}</td>
                 <td>
-                    <div class="table-data-feature">
+                    <div id="myTable" class="table-data-feature">
                         <button class="item" data-toggle="tooltip" data-placement="top" title="Show">
-                            <a href="{{ path('pack_show', {'id': pack.id}) }}"><i class="zmdi zmdi-mail-send"></i></a>
+                            <a href="{{ path('pack_show', {'id': pack.id}) }}"><i class="fa  fa-tasks"></i></a>
                         </button>
                         <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                             <a href="{{ path('pack_edit', {'id': pack.id}) }}"><i class="zmdi zmdi-edit"></i></a>
                         </button>
-                        <!--button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                            <i class="zmdi zmdi-delete"></i>
-                        </button-->
 
                     </div>
                 </td>
@@ -84,4 +72,29 @@
     <!-- END DATA TABLE -->
 
 
+{% endblock %}
+{% block scripts %}
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 {% endblock %}
