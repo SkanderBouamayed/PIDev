@@ -31,6 +31,7 @@ return [
     'pack_index' => [[], ['_controller' => 'App\\Controller\\PackController::index'], [], [['text', '/pack/index']], [], []],
     'pack_pdf' => [[], ['_controller' => 'App\\Controller\\PackController::pdf'], [], [['text', '/pack/pdf']], [], []],
     'pack_index_front' => [[], ['_controller' => 'App\\Controller\\PackController::frontIndex'], [], [['text', '/pack/front']], [], []],
+    'myPack_index' => [[], ['_controller' => 'App\\Controller\\PackController::myPackShow'], [], [['text', '/pack/front/myPacks']], [], []],
     'pack_index_prix' => [[], ['_controller' => 'App\\Controller\\PackController::orderedPriceShow'], [], [['text', '/pack/indexPrix']], [], []],
     'pack_index_name' => [[], ['_controller' => 'App\\Controller\\PackController::orderedNameShow'], [], [['text', '/pack/indexName']], [], []],
     'pack_new' => [[], ['_controller' => 'App\\Controller\\PackController::new'], [], [['text', '/pack/new']], [], []],

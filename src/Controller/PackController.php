@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Pack;
 use App\Form\PackType;
+use App\Repository\OrdersRepository;
+use App\Repository\PackRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -82,6 +84,16 @@ class PackController extends AbstractController
             'packs' => $packs,
         ]);
     }
+    /**
+     * @Route("/front/myPacks", name="myPack_index")
+     */
+    public function myPackShow(PackRepository $packRepository, OrdersRepository $ordersRepository): Response {
+     $packs = $packRepository->myPacks(6, $ordersRepository);
+        return $this->render('pack/front_index_myPacks.html.twig', [
+            'packs' => $packs,
+        ]);
+    }
+
     /**
      * @Route("/indexPrix", name="pack_index_prix", methods={"GET"})
      */

@@ -371,6 +371,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\PackRepository" class="App\Repository\PackRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id=".legacy_controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -4007,7 +4011,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.QsrspC5"/>
+      <argument type="service" id=".service_locator.ghFrpw."/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5047,6 +5051,8 @@
     <service id=".abstract.instanceof.App\Form\PackType" class="App\Form\PackType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\OrdersRepository" class="App\Repository\OrdersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\OrdersRepository" class="App\Repository\OrdersRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PackRepository" class="App\Repository\PackRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PackRepository" class="App\Repository\PackRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5328,6 +5334,12 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.O8DkLc." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ordersRepository" type="service" id="App\Repository\OrdersRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.Pfar364" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5347,13 +5359,20 @@
         <argument key="paginator" type="service" id="knp_paginator"/>
       </argument>
     </service>
+    <service id=".service_locator.jThh9MV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="ordersRepository" type="service" id="App\Repository\OrdersRepository"/>
+        <argument key="packRepository" type="service" id="App\Repository\PackRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.BWK3qm8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="pack" type="service" id=".errored..service_locator.BWK3qm8.App\Entity\Pack"/>
       </argument>
     </service>
-    <service id=".service_locator.2KRmEvF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.XEakRsv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\OrdersController::delete" type="service" id=".service_locator.sjPtKVE"/>
@@ -5361,10 +5380,12 @@
         <argument key="App\Controller\OrdersController::index" type="service" id=".service_locator.Pfar364"/>
         <argument key="App\Controller\OrdersController::orderedPackShow" type="service" id=".service_locator.Pfar364"/>
         <argument key="App\Controller\OrdersController::orderedStatusShow" type="service" id=".service_locator.Pfar364"/>
+        <argument key="App\Controller\OrdersController::removeOrder" type="service" id=".service_locator.O8DkLc."/>
         <argument key="App\Controller\OrdersController::show" type="service" id=".service_locator.sjPtKVE"/>
         <argument key="App\Controller\PackController::delete" type="service" id=".service_locator.BWK3qm8"/>
         <argument key="App\Controller\PackController::edit" type="service" id=".service_locator.BWK3qm8"/>
         <argument key="App\Controller\PackController::index" type="service" id=".service_locator.n8gOTNr"/>
+        <argument key="App\Controller\PackController::myPackShow" type="service" id=".service_locator.jThh9MV"/>
         <argument key="App\Controller\PackController::orderedNameShow" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\PackController::orderedPriceShow" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\PackController::show" type="service" id=".service_locator.BWK3qm8"/>
@@ -5373,10 +5394,12 @@
         <argument key="App\Controller\OrdersController:index" type="service" id=".service_locator.Pfar364"/>
         <argument key="App\Controller\OrdersController:orderedPackShow" type="service" id=".service_locator.Pfar364"/>
         <argument key="App\Controller\OrdersController:orderedStatusShow" type="service" id=".service_locator.Pfar364"/>
+        <argument key="App\Controller\OrdersController:removeOrder" type="service" id=".service_locator.O8DkLc."/>
         <argument key="App\Controller\OrdersController:show" type="service" id=".service_locator.sjPtKVE"/>
         <argument key="App\Controller\PackController:delete" type="service" id=".service_locator.BWK3qm8"/>
         <argument key="App\Controller\PackController:edit" type="service" id=".service_locator.BWK3qm8"/>
         <argument key="App\Controller\PackController:index" type="service" id=".service_locator.n8gOTNr"/>
+        <argument key="App\Controller\PackController:myPackShow" type="service" id=".service_locator.jThh9MV"/>
         <argument key="App\Controller\PackController:orderedNameShow" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\PackController:orderedPriceShow" type="service" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\PackController:show" type="service" id=".service_locator.BWK3qm8"/>
@@ -5611,10 +5634,11 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.QsrspC5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ghFrpw." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\OrdersRepository" type="service" id="App\Repository\OrdersRepository"/>
+        <argument key="App\Repository\PackRepository" type="service" id="App\Repository\PackRepository"/>
       </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -5823,12 +5847,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.2KRmEvF"/>
+      <argument type="service" id=".service_locator.XEakRsv"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.2KRmEvF"/>
+      <argument type="service" id=".service_locator.XEakRsv"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -6234,7 +6258,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.2KRmEvF"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.XEakRsv"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -57,10 +57,10 @@ class OrdersController extends AbstractController
     /**
      * @Route("/front/remove{id}", name="orders_remove_front")
      */
-    public function removeOrder(int $id): Response
+    public function removeOrder(int $id, OrdersRepository $ordersRepository): Response
     {
-
-        return $this->redirectToRoute('orders_index_front');
+        $ordersRepository->deleteOrder($id);
+        return $this->redirectToRoute('myPack_index');
     }
 
     /**
